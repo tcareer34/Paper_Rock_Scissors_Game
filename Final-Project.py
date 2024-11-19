@@ -1,5 +1,6 @@
 # The following line imports the choice function from Python's random module, which is used to randomly select an item from a list.
 from random import randint
+import winsound
 
 # The following line creates a list of play options name tim
 tim = ["Stone", "Paper", "Scissors"]
@@ -32,32 +33,47 @@ while True:
         if computer == "Scissors":
             print("Nice choice, you win!", player, "smashes", computer)
             player_score += 1
+            winsound.Beep(500, 300)  # Frequency, duration in milliseconds
+            winsound.Beep(600, 400)  # Frequency, duration in milliseconds
+            winsound.Beep(700, 500)
             win_streak += 1 # This line adds 1 to players winning streak total.
         else:
             print("Sorry, you lose!", computer, "covers", player)
             computer_score += 1
+            winsound.Beep(300, 500)  # Frequency, duration in milliseconds
+            winsound.Beep(200, 1000)  # Frequency, duration in milliseconds
             win_streak = 0  # This line resets win streak when player loses.
 
     elif player == "Paper":
         if computer == "Stone":
             print("Good play, you win!", player, "covers", computer)
             player_score += 1
+            winsound.Beep(500, 300) # Frequency, duration in milliseconds
+            winsound.Beep(600, 400)
+            winsound.Beep(700, 500)
             win_streak += 1
 
         else:
             print("Better luck next time, you lose!", computer, "cuts", player)
             computer_score += 1
+            winsound.Beep(300, 500)  # Frequency, duration in milliseconds
+            winsound.Beep(200, 1000)  # Frequency, duration in milliseconds
             win_streak = 0 # This line resets win streak when player loses.
 
     elif player == "Scissors":
         if computer == "Paper":
             print("Excellent play, you win!", player, "cuts", computer)
             player_score += 1
+            winsound.Beep(500, 300)  # Frequency, duration in milliseconds
+            winsound.Beep(600, 400)
+            winsound.Beep(700, 500)
             win_streak += 1
 
         else:
             print("You lose...", computer, "smashes", player)
             computer_score += 1
+            winsound.Beep(300, 500)  # Frequency, duration in milliseconds
+            winsound.Beep(200, 1000)  # Frequency, duration in milliseconds
             win_streak = 0
 
     # The following line prints if the player enters an invalid play.
@@ -67,6 +83,11 @@ while True:
     # This next line checks if player has won 3 in a row.
     if win_streak == 3:
         print("You're on fire!")
+        winsound.Beep(400, 500)  # Frequency, duration in milliseconds
+        winsound.Beep(500, 600)  # Frequency, duration in milliseconds
+        winsound.Beep(600, 700)  # Frequency, duration in milliseconds
+        winsound.Beep(700, 800)  # Frequency, duration in milliseconds
+        winsound.Beep(900, 900)  # Frequency, duration in milliseconds
         win_streak = 0  # Reset streak counts after outputting message.
 
     # The following line displays the current scores.
